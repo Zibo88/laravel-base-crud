@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+// includo il model
+use App\Comic;
 
 class ComicController extends Controller
 {
@@ -13,7 +15,7 @@ class ComicController extends Controller
      */
     public function index()
     {
-        
+
         return view('comics.index');
     }
 
