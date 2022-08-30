@@ -54,8 +54,14 @@ class ComicController extends Controller
      */
     public function show($id)
     {   
+        // creo il collegamento con l'id attraverso il model
+        $comics = Comic::FindOrFail($id);
+
+        $data = [
+            'comics' => $comics
+        ];
         // assegno la view dove mostrare i dati
-        return view('comics.show');
+        return view('comics.show', $data);
     }
 
     /**
