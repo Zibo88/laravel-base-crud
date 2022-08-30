@@ -1,10 +1,11 @@
 @extends('layouts.app')
 
 @section('page_title')
-    Single Product    
+    {{$comics->title}}  
 @endsection
 
 @section('main_content')
+{{-- layout singola card --}}
 <div class="card">
     <h1>{{$comics->title}}</h1>
     <img src="{{$comics->thumb}}" alt="{{$comics->title}}">
