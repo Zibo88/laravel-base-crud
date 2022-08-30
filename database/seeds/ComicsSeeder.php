@@ -15,18 +15,18 @@ class ComicsSeeder extends Seeder
         $comics_array = config('comics');
        
         foreach($comics_array as $comic){
-            // richiamo il model creando una nuvo riga
-            $comic = new Comic;
+            // richiamo il model creando una nuova riga
+            $new_comic = new Comic;
             // popolo le righe
-            $comic -> title = $comic['title'];
-            $comic -> description = $comic['description'];
-            $comic -> thumb = $comic['thumb'];
-            $comic -> price = $comic['price'];
-            $comic -> series = $comic['series'];
-            $comic -> sale_date = $comic['sale_date'];
-            $comic -> type = $comic['type'];
+            $new_comic -> title = $comic['title'];
+            $new_comic -> description = $comic['description'];
+            $new_comic -> thumb = $comic['thumb'];
+            $new_comic -> price = $comic['price'];
+            $new_comic -> series = $comic['series'];
+            $new_comic -> sale_date = $comic['sale_date'];
+            $new_comic -> type = $comic['type'];
             // salvo le assegnazioni
-            $comic -> save();
+            $new_comic -> save();
 
         }
         
