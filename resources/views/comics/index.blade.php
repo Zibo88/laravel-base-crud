@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('page_title')
+    All Comics
+@endsection
+
 @section('main_content')
     <div class="container">
         @foreach ($comics as $comic)

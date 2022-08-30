@@ -18,6 +18,7 @@ class ComicController extends Controller
         // utilizzo il model
         $comics = Comic::all();
 
+        // passo i dati alla pagina dove verranno visualizzati
         $data = [
             'comics' => $comics,
         ];
@@ -52,8 +53,9 @@ class ComicController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        //
+    {   
+        // assegno la view dove mostrare i dati
+        return view('comics.show');
     }
 
     /**
