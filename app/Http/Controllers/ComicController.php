@@ -43,7 +43,28 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // leggo i dati
+        $form_data = $request->all();
+        dump($form_data);
+
+        // creo una nuova riga
+        $add_comic = new Comic;
+
+        // popolo le righe assegnando il valore
+        $add_comic -> title = $form_data['title'];
+        $add_comic -> description = $form_data['description'];
+        $add_comic -> thumb = $form_data['thumb'];
+        $add_comic -> price = $form_data['price'];
+        $add_comic -> series = $form_data['series'];
+        $add_comic -> sale_date = $form_data['sale_date'];
+        $add_comic -> type = $form_data['type'];
+
+        // salvo i dati
+        $add_comic -> save();
+
+        // reindirizzo l'utente verso la pagina show con l'id di riferimento (secondo parametro dentro route:list)
+        return redirect()-> route('comics.show', ['comic' => $add_comic->id ]);
+
     }
 
     /**
@@ -54,7 +75,7 @@ class ComicController extends Controller
      */
     public function show($id)
     {   
-        // creo il collegamento con l'id attraverso il model
+        // creo il collegamento con l'id attraverso il model così da mostrare il singolo elemento
         $comics = Comic::FindOrFail($id);
 
         $data = [
