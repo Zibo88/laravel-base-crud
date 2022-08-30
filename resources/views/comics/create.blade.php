@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('main_content')
-    <form action="">
+    <form action="{{route ('comics.store')}}" method="post">
         {{-- titolo --}}
         <div>
             <label for="title"></label>
