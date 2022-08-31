@@ -1,6 +1,16 @@
 @extends('layouts.app')
 
 @section('main_content')
+    {{-- snip per mostrare gli errori di compilazione durante la compilazione del form per aver una nuova riga --}}
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     {{-- i dati del form verranno salvati nello store --}}
     <form action="{{route ('comics.store')}}" method="post">
         {{-- aumentare la sicurezza del form --}}
