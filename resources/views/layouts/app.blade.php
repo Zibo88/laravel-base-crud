@@ -13,7 +13,8 @@
                 <a href="{{route ('comics.index')}}">Home</a>
             </li>
             <li>
-                <a href="{{route('comics.show', ['comic' => $comic->id ])}}">Single Comic</a>
+                {{-- chiedere chiarimenti sulla route 
+                <a href="{{route('comics.show', ['comic' => $comics->id ])}}">Single Comic</a> --}}
             </li>
         </ul>
     </header>
