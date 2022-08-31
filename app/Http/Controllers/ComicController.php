@@ -44,7 +44,7 @@ class ComicController extends Controller
     public function store(Request $request)
     {
         // Validazione (richiama funzione protected con tutte le regole)
-        $request -> validate(getDataRules());
+        $request -> validate($this->getDataRules());
             
     
         // leggo i dati
