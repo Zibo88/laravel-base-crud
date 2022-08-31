@@ -21,9 +21,9 @@
             {{-- aggiungendo la value {{old ('nome colonna')}} all'input dl form evitiamo che in caso di errore tutti i dati validi scopaiano --}}
             <input type="text" id="title" name="title" value="{{old('title')}}">
             {{-- mostrare errore alla singola input --}}
-            @error('title')
+            {{-- @error('title')
                 <div class="alert alert-danger">Il titolo è un campo obbligatorio</div>
-            @enderror
+            @enderror --}}
         </div>
         {{-- descrizione --}}
         <div>
@@ -56,7 +56,7 @@
             <input type="text" id="type" name="type" value="{{old('type')}}">
         </div>
 
-        <button>Salva</button>
+        <input type="submit" value="Salva">
 
         
     </form>

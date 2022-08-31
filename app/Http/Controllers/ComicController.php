@@ -106,7 +106,15 @@ class ComicController extends Controller
      */
     public function edit($id)
     {
-        return view('comics.edit');
+        // assegno alla variabile il valore $id attraverso il model
+        $comic = Comic::FindOrFail($id);
+        // dd($comic);
+
+        $data = [
+            'comic' => $comic
+        ];
+
+        return view('comics.edit',$data);
     }
 
     /**
