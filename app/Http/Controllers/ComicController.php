@@ -43,16 +43,9 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        // Validazione 
-        $request -> validate([
-            // nome colonna -> parametri (altre validazioni sulla documentazione)
-            'title' => 'required | max:200',
-            'description' => 'max:60000',
-            'price' => 'required | max:5',
-            'series' => 'max:500',
-            'type' => 'required | max:500'
-
-        ]);
+        // Validazione (richiama funzione protected con tutte le regole)
+        $request -> validate(getDataRules());
+            
     
         // leggo i dati
         $form_data = $request->all();
@@ -135,7 +128,7 @@ class ComicController extends Controller
         $change_comic = Comic::FindOrFail($id);
 
         // modifico la riga attraverso l'assegnazione del mothod update()
-        $change_comic->update($form_data)
+        $change_comic->update($form_data);
     }
 
     /**
@@ -147,5 +140,19 @@ class ComicController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    // creo funzione per la validazione del file edit.blade
+    protected function getDataRules(){
+        return[
+            // nome colonna -> parametri (altre validazioni sulla documentazione));
+            'title' => 'required | max:200',
+            'description' => 'max:60000',
+            'price' => 'required | max:5',
+            'series' => 'max:500',
+            'type' => 'required | max:500'
+
+        ];
     }
 }
