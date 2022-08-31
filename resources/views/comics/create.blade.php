@@ -20,6 +20,10 @@
             <label for="title">Titolo</label>
             {{-- aggiungendo la value {{old ('nome colonna')}} all'input dl form evitiamo che in caso di errore tutti i dati validi scopaiano --}}
             <input type="text" id="title" name="title" value="{{old('title')}}">
+            {{-- mostrare errore alla singola input --}}
+            @error('title')
+                <div class="alert alert-danger">Il titolo è un campo obbligatorio</div>
+            @enderror
         </div>
         {{-- descrizione --}}
         <div>
