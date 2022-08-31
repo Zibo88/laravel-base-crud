@@ -110,6 +110,7 @@ class ComicController extends Controller
         $comic = Comic::FindOrFail($id);
         // dd($comic);
 
+        // trasferisco i dati
         $data = [
             'comic' => $comic
         ];
@@ -126,7 +127,15 @@ class ComicController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+        // richiedo tutti i dati del form compilato 
+        $form_data = $request->all();
+        // dd($form_data) ;
+
+        // ricerco i comic attraverso l'id, richiamando il model
+        $change_comic = Comic::FindOrFail($id);
+
+        // modifico la riga attraverso l'assegnazione del mothod update()
+        $change_comic->update($form_data)
     }
 
     /**

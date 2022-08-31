@@ -2,13 +2,18 @@
 
 @section('main_content')
     <div>
-        <form action="" method="post">
+        {{-- invio il form a comics.update perchè sarà li che verrà eseguito l'aggiornamento, comics.update ha come method di trasferimento dati PUT. --}}
+        <form action="{{route ('comics.update', ['comic' => $comic->id])}}" method="post">
             {{-- aumentare la sicurezza del form --}}
             @csrf
+            {{-- modifichiamo il tipo di chiamata  --}}
+            @method('PUT')
+
             {{-- titolo --}}
             <div>
                 <label for="title">Titolo</label>
                 <input type="text" id="title" name="title" value="{{$comic->title}}">
+
                 {{-- {{dd($comic)}} --}}
             </div>
             {{-- descrizione --}}
