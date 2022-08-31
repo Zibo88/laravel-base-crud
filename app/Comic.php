@@ -8,11 +8,12 @@ class Comic extends Model
 {
     protected $table = 'comics';
     protected $fillable = [
-        'src',
         'title',
+        'description',
+        'thumb',
+        'price',
+        'series',
         'type',
-        'cook_time',
-        'weight',
-        'description'
+        
     ];
 }

@@ -24,7 +24,8 @@
                 <form action="{{route('comics.destroy',  $comic->id)}}" method="post">
                     @csrf
                     @method('DELETE')
-                    <input type="submit" value="Cancella"> 
+                    {{-- aggiungendo onClick chiediamo all'utente se davvero vuole cancellare l'elemento attraverso un alert --}}
+                    <input type="submit" value="Cancella" onClick="return confirm('Sei sicuro di voler cancellare elemento selezionato?');"> 
                 </form>
             </div>
         @endforeach
