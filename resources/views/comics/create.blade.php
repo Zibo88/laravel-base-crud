@@ -18,37 +18,38 @@
         {{-- titolo --}}
         <div>
             <label for="title">Titolo</label>
-            <input type="text" id="title" name="title">
+            {{-- aggiungendo la value {{old ('nome colonna')}} all'input dl form evitiamo che in caso di errore tutti i dati validi scopaiano --}}
+            <input type="text" id="title" name="title" value="{{old('title')}}">
         </div>
         {{-- descrizione --}}
         <div>
             <label for="description">Descrizione</label>
-            <input type="textarea" id="title" name="description">
+            <input type="textarea" id="title" name="description" value="{{old('description')}}">
         </div>
         {{-- foto --}}
         <div>
             <label for="thumb">Url Immagine</label>
-            <input type="text" id="title" name="thumb">
+            <input type="text" id="title" name="thumb" value="{{old('thumb')}}">
         </div>
         {{-- prezzo --}}
         <div>
             <label for="price">Prezzo</label>
-            <input type="text" id="title" name="price">
+            <input type="text" id="title" name="price" value="{{old('price')}}">
         </div>
         {{-- serie --}}
         <div>
             <label for="series">Serie</label>
-            <input type="text" id="series" name="series">
+            <input type="text" id="series" name="series" value="{{old('series')}}">
         </div>
         {{-- da di uscita --}}
         <div>
             <label for="sale_date">Data di uscita</label>
-            <input type="date" id="sale_date" name="sale_date">
+            <input type="date" id="sale_date" name="sale_date" value="{{old('sale_date')}}">
         </div>
         {{-- tipo --}}
         <div>
             <label for="type">Tipologia</label>
-            <input type="text" id="type" name="type">
+            <input type="text" id="type" name="type" value="{{old('type')}}">
         </div>
 
         <button>Salva</button>

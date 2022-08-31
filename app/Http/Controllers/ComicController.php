@@ -45,7 +45,7 @@ class ComicController extends Controller
     {
         // Validazione 
         $request -> validate([
-            // nome colonna -> parametri
+            // nome colonna -> parametri (altre validazioni sulla documentazione)
             'title' => 'required | max:200',
             'description' => 'max:60000',
             'price' => 'required | max:5',
