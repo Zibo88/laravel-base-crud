@@ -129,6 +129,9 @@ class ComicController extends Controller
 
         // modifico la riga attraverso l'assegnazione del mothod update()
         $change_comic->update($form_data);
+
+        // eseguo una redirect alla pagina che mostra il singolo prodotto, passando come parametro quello nell route:list e dando come valore quello proveniente dal form
+        return redirect()->route('comics.show', ['comic'=> $change_comic->id ]);
     }
 
     /**

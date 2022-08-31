@@ -2,6 +2,21 @@
 
 @section('main_content')
     <div>
+         
+
+        {{-- snip che mostra gli errori --}}
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
+
+
         {{-- invio il form a comics.update perchè sarà li che verrà eseguito l'aggiornamento, comics.update ha come method di trasferimento dati PUT. --}}
         <form action="{{route ('comics.update', ['comic' => $comic->id])}}" method="post">
             {{-- aumentare la sicurezza del form --}}
