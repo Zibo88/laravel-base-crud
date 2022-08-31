@@ -8,7 +8,14 @@
 </head>
 <body>
     <header>
-        header
+        <ul>
+            <li>
+                <a href="{{route ('comics.index')}}">Home</a>
+            </li>
+            <li>
+                <a href="{{route('comics.show', ['comic' => $comic->id ])}}">Single Comic</a>
+            </li>
+        </ul>
     </header>
 
     <main>

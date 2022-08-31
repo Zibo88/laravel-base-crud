@@ -76,10 +76,10 @@ class ComicController extends Controller
     public function show($id)
     {   
         // creo il collegamento con l'id attraverso il model così da mostrare il singolo elemento
-        $comics = Comic::FindOrFail($id);
+        $comic = Comic::FindOrFail($id);
 
         $data = [
-            'comics' => $comics
+            'comic' => $comic
         ];
         // assegno la view dove mostrare i dati
         return view('comics.show', $data);
@@ -93,7 +93,7 @@ class ComicController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**
@@ -105,7 +105,7 @@ class ComicController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
     }
 
     /**
