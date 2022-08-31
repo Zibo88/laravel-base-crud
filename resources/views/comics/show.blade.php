@@ -16,7 +16,8 @@
 </div>
 
 {{-- Bottone per la modifica dell'elemento creato --}}
-<div> 
+<div>
+     
     {{-- aggiunta di bottone che porta alla sezione edit per la modifica del file inserito nel form --}}
     <button><a href="{{route ('comics.edit',  $comics->id)}}">Modifica</a></button>
 </div>
