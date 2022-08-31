@@ -18,6 +18,16 @@
                 {{-- la prima parte dell'url è il name che si trova in route:list, quello tra le [] è --}}
                 <a href="{{ route ('comics.show', ['comic' => $comic->id])}}">Mostra Dettagli</a>
             </div>
+
+            {{-- Form pr cancellare il dato dalla riga --}}
+            <div>
+                <form action="{{route('comics.destroy',  $comic->id)}}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <input type="submit" value="Cancella"> 
+                </form>
+            </div>
         @endforeach
+       
     </div>
 @endsection

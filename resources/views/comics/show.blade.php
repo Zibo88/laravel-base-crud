@@ -14,6 +14,12 @@
     <div>Data di uscita: {{$comics->sale_date}}</div>
     <div>{{$comics->series}} - {{$comics->type}} </div>
 </div>
-     
+
+{{-- Bottone per la modifica dell'elemento creato --}}
+<div> 
+    {{-- aggiunta di bottone che porta alla sezione edit per la modifica del file inserito nel form --}}
+    <button><a href="{{route ('comics.edit',  $comics->id)}}">Modifica</a></button>
+</div>
+      
    
 @endsection

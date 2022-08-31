@@ -61,11 +61,10 @@
                 <label for="type">Tipologia</label>
                 <input type="text" id="type" name="type" value="{{$comic->type}}">
             </div>
-    
-            <input type="submit" value="Salva">
-    
             
         </form>
-    </div>    
+
+        
+    </div>
 
 @endsection
