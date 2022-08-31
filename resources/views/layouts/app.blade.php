@@ -13,9 +13,9 @@
                 <a href="{{route ('comics.index')}}">Home</a>
             </li>
             <li>
-                {{-- chiedere chiarimenti sulla route 
-                <a href="{{route('comics.show', ['comic' => $comics->id ])}}">Single Comic</a> --}}
+                <a href="{{route('comics.create')}}">Crea il tuo comic</a>
             </li>
+            
         </ul>
     </header>
 
