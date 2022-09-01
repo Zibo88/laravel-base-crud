@@ -10,7 +10,10 @@
     <header>
         <ul>
             <li>
-                <a href="{{route ('comics.index')}}">Home</a>
+                <a href="{{route ('home')}}">home</a>
+            </li>
+            <li>
+                <a href="{{route ('comics.index')}}">Fumetti</a>
             </li>
             <li>
                 <a href="{{route('comics.create')}}">Crea il tuo comic</a>

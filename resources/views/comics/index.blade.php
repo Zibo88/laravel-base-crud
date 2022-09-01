@@ -21,7 +21,7 @@
 
             {{-- Form pr cancellare il dato dalla riga --}}
             <div>
-                <form action="{{route('comics.destroy',  $comic->id)}}" method="post">
+                <form action="{{route('comics.destroy', $comic->id)}}" method="post">
                     @csrf
                     @method('DELETE')
                     {{-- aggiungendo onClick chiediamo all'utente se davvero vuole cancellare l'elemento attraverso un alert --}}
